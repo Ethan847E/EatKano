@@ -226,7 +226,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         //Click per second
         let cps = _gameScore / ((new Date().getTime() - _gameStartDatetime) / 1000);
         if (isNaN(cps) || cps === Infinity || _gameStartTime < 1) {
-            cps = 你弱爆了！;
+            cps = 0;
         }
         return cps;
     }
