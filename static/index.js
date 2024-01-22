@@ -164,6 +164,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     function countBlockSize() {
+        //判定
         blockSize = body.offsetWidth / 4;
         body.style.height = window.innerHeight + 'px';
         GameLayerBG.style.height = window.innerHeight + 'px';
@@ -181,6 +182,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     let _gameStartTime, _gameStartDatetime;
 
     function gameInit() {
+        //音乐
         createjs.Sound.registerSound({
             src: "./static/music/err.mp3",
             id: "err"
@@ -197,6 +199,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     function gameRestart() {
+        //游戏重新开始
         _gameBBList = [];
         _gameBBListIndex = 0;
         _gameScore = 0;
@@ -211,6 +214,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     function gameStart() {
+        //游戏初次开始
         _date1 = new Date();
         _gameStartDatetime = _date1.getTime();
         _gameStart = true;
@@ -219,6 +223,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     function getCPS() {
+        //click per second
         let cps = _gameScore / ((new Date().getTime() - _gameStartDatetime) / 1000);
         if (isNaN(cps) || cps === Infinity || _gameStartTime < 2) {
             cps = 0;
